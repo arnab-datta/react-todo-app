@@ -212,3 +212,11 @@ form p {
   opacity: 0.3;
   pointer-events: none;
 }
+
+body.swal2-height-auto {
+  height: 100vh !important;
+}
+
+.swal2-styled:focus {
+  box-shadow: none
+}
