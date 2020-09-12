@@ -5,7 +5,7 @@ import "./App.css";
 
 function App() {
   const [taskItem, setTaskItem] = useState("");
-  const [taskList, setTaskList] = useState([]);
+  const [taskListArr, setTaskListArr] = useState([]);
 
   const addTodoItem = (todoValue, e) => {
     e.preventDefault();
@@ -16,10 +16,10 @@ function App() {
         value: val,
         isDone: false,
       };
-      const todoList = [...taskList];
+      const todoList = [...taskListArr];
       todoList.push(newItem);
       setTaskItem("");
-      setTaskList(todoList);
+      setTaskListArr(todoList);
     } else {
       setTaskItem("");
       Swal.fire({
@@ -32,9 +32,9 @@ function App() {
   };
 
   const deleteTodoItem = (delTaskId) => {
-    const todoList = [...taskList];
+    const todoList = [...taskListArr];
     const updatedtodoList = todoList.filter((item) => item.id !== delTaskId);
-    setTaskList(updatedtodoList);
+    setTaskListArr(updatedtodoList);
   };
 
   const updateInput = (inputTask) => {
@@ -42,10 +42,10 @@ function App() {
   };
 
   const handleCheck = (isChecked, taskId) => {
-    let todoList = [...taskList];
+    let todoList = [...taskListArr];
     const foundItemIndex = todoList.findIndex((item) => item.id === taskId);
     todoList[foundItemIndex].isDone = isChecked;
-    setTaskList(todoList);
+    setTaskListArr(todoList);
   };
 
   return (
@@ -76,7 +76,7 @@ function App() {
 
         <div className="cardParent">
           <ul className="list-group">
-            {taskList.map((item) => {
+            {taskListArr.map((item) => {
               return (
                 <li
                   key={item.id}
