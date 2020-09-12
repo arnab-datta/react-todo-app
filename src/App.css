@@ -22,6 +22,8 @@ body {
 
 
 .container {
+  width: 100vw !important;
+  height: 100vh !important;
   padding-top: 54px !important;
 }
 
@@ -213,10 +215,8 @@ form p {
   pointer-events: none;
 }
 
-body.swal2-height-auto {
-  height: 100vh !important;
-}
+
 
 .swal2-styled:focus {
-  box-shadow: none
+  box-shadow: none !important
 }
